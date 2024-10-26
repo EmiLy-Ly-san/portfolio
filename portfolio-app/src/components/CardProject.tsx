@@ -1,16 +1,38 @@
-export default function CardProject() {
+export interface Project {
+  id: number;
+  name: string;
+  label: string;
+  hrefDemo: string;
+  hrefCode: string;
+  picture: string;
+  description: string;
+  challenge: string;
+  languages: string[];
+}
+
+export type CardProjectProps = Project; // Le type des props du composant CardProject est le meme que le type d'un Projet
+
+export default function CardProject({
+  id,
+  name,
+  label,
+  hrefDemo,
+  hrefCode,
+  picture,
+  description,
+  challenge,
+  languages,
+}: CardProjectProps) {
   return (
-    <article className="project project1 htmlProject cssProject jsProject bootstrapProject">
+    <article
+      className={`project project${id} htmlProject cssProject jsProject bootstrapProject`}
+    >
       <div className="card-header-Label">
         <div className="label">
-          <p>In Progress</p>
+          <p>{label}</p>
         </div>
         <div className="links">
-          <a
-            href="https://github.com/EmiLy-Ly-san/AnimeArtMeteo"
-            title="view code"
-            target="_blank"
-          >
+          <a href={hrefCode} title="view code" target="_blank">
             <img
               className="icon icon20"
               src="./src/assets/code-icon.svg"
@@ -18,11 +40,7 @@ export default function CardProject() {
               aria-hidden
             />
           </a>
-          <a
-            href="https://emily-ly-san.github.io/AnimeArtMeteo/"
-            title="view demo project"
-            target="_blank"
-          >
+          <a href={hrefDemo} title="view demo project" target="_blank">
             <img
               className="icon icon20"
               src="./src/assets/open-in-new-window-icon.svg"
@@ -33,18 +51,18 @@ export default function CardProject() {
         </div>
       </div>
       <div className="card-body">
-        <img className="projectPicture" src="./src/assets/animeArtMeteo.JPG" />
-        <h2>Anime Art Meteo</h2>
+        <img className="projectPicture" src={picture} />
+        <h2>{name}</h2>
         <div className="infoProjectWrapper">
-          <p className="description">
-            Meteo web application who generates illustrations Work in progress
-          </p>
-          <p>
-            API |Async | Collections user | modules JS | localStorage | CRUD
-          </p>
+          <p className="description">{description}</p>
+          <p>{challenge}</p>
         </div>
         <p>
-          <strong>#HTML #JS #SCSS #BOOTSTRAP</strong>
+          <strong>
+            {languages
+              .map((language) => `#${language.toUpperCase()}`)
+              .join(" ")}
+          </strong>
         </p>
       </div>
     </article>

@@ -1,9 +1,20 @@
-import CardProject from "./CardProject";
+import CardProject, { Project } from "./CardProject";
 
-export default function SectionGridProjects() {
+interface SectionGridProjectsProps {
+  datasProjects: Project[];
+}
+
+export default function SectionGridProjects({
+  datasProjects,
+}: SectionGridProjectsProps) {
   return (
     <section className="pinnedProjects" id="projectsGridContainer">
-      <CardProject />
+      {datasProjects.map((project) => {
+        return <CardProject {...project} key={project.id} />;
+        {
+          /*on peut spreader l'objet courant {...project} de la boucle, qui est en paramètres, pour assigner toutes ses propriétées en tant que props au composant*/
+        }
+      })}
     </section>
   );
 }

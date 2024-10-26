@@ -1,11 +1,16 @@
 import SectionButtonsSort from "./SectionButtonsSort";
 import SectionGridProjects from "./SectionGridProjects";
+import { Project } from "./CardProject";
 
-export default function Main() {
+interface MainProps {
+  datasProjects: Project[];
+}
+
+export default function Main({ datasProjects }: MainProps) {
   return (
     <main>
-      <SectionButtonsSort /> {/*buttonsSort*/}
-      <SectionGridProjects />
+      <SectionButtonsSort />
+      <SectionGridProjects datasProjects={datasProjects} />
     </main>
   );
 }
