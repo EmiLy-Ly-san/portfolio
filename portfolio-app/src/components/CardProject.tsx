@@ -1,9 +1,9 @@
 export interface Project {
   id: number;
   name: string;
-  label: string;
+  label?: string | null;
   hrefDemo: string;
-  hrefCode: string;
+  hrefCode?: string | null;
   picture: string;
   description: string;
   challenge: string;
@@ -28,18 +28,18 @@ export default function CardProject({
       className={`project project${id} htmlProject cssProject jsProject bootstrapProject`}
     >
       <div className="card-header-Label">
-        <div className="label">
-          <p>{label}</p>
-        </div>
+        <div className="label">{label ? <p>{label}</p> : null}</div>
         <div className="links">
-          <a href={hrefCode} title="view code" target="_blank">
-            <img
-              className="icon icon20"
-              src="./src/assets/code-icon.svg"
-              alt=""
-              aria-hidden
-            />
-          </a>
+          {hrefCode ? (
+            <a href={hrefCode} title="view code" target="_blank">
+              <img
+                className="icon icon20"
+                src="./src/assets/code-icon.svg"
+                alt=""
+                aria-hidden
+              />
+            </a>
+          ) : null}
           <a href={hrefDemo} title="view demo project" target="_blank">
             <img
               className="icon icon20"
