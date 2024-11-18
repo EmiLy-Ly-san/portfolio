@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/datas.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/cardproject.tsx","./src/components/footer.tsx","./src/components/header.tsx","./src/components/main.tsx","./src/components/sectionbuttonssort.tsx","./src/components/sectiongridprojects.tsx","./src/components/sentencearticle.tsx","./src/contexts/gridcontext.tsx"],"version":"5.6.3"}
