@@ -25,10 +25,10 @@ export default function CardProject({
 }: CardProjectProps) {
   return (
     <article
-      className={`project project${id} htmlProject cssProject jsProject bootstrapProject`}
+      className={`project project${id}`}
     >
       <div className="card-header-Label">
-        <div className="label">{label ? <p>{label}</p> : null}</div>
+        <div className="label">{label? <p>{label}</p> : null}</div>
         <div className="links">
           {hrefCode ? (
             <a href={hrefCode} title="view code" target="_blank">

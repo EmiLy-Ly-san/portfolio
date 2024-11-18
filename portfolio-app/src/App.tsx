@@ -2,10 +2,38 @@ import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const datasProjects = [
   {
     id: 1,
+    name: "Pokedex",
+    label: "NEW",
+    hrefDemo: "https://mellerincharly.github.io/projet-quiz-nantes/",
+    hrefCode: "https://github.com/MellerinCharly/projet-quiz-nantes",
+    picture: "./src/assets/pokedex2.JPG",
+    description:
+      "Find your favorite pokemon in the first generation and check his description.",
+    challenge:
+      "Rules : react components architecture, data filtration, CSS animation",
+    languages: ["REACT", "typescript", "css", "all"],
+  },
+  {
+    id: 2,
+    name: "Nantes Quest",
+    label: "NEW",
+    hrefDemo: "https://emily-ly-san.github.io/pokemon/",
+    hrefCode: "https://github.com/EmiLy-Ly-san/pokemon",
+    picture: "./src/assets/nantesQuest.JPG",
+    description:
+      "Web site who generates differents quizz about Nantes city in France, build in team",
+    challenge:
+      "Rules : code architecture in moduls, and JavaScript part",
+    languages: ["html", "js", "css", "all"],
+  },
+  {
+    id: 3,
     name: "Anime Art Meteo",
     label: "In Progress",
     hrefDemo: "https://emily-ly-san.github.io/AnimeArtMeteo/",
@@ -15,30 +43,9 @@ const datasProjects = [
       "Web meteo application who generates illustrations Work in progress",
     challenge:
       "API |Async | Collections user | modules JS | localStorage | CRUD",
-    languages: ["html", "js", "scss", "bootstrap"],
+    languages: ["html", "js", "scss", "bootstrap", "all"],
   },
-  {
-    id: 2,
-    name: "Anime Art Clock",
-    label: "",
-    hrefDemo: "https://codepen.io/EmiLy-Ly-san/pen/wvbPqPv",
-    hrefCode: "",
-    picture: "./src/assets/animeArtClock.JPG",
-    description: "Clock application",
-    challenge: "Animation with JS | Glass effect in CSS",
-    languages: ["html", "js", "css"],
-  },
-  {
-    id: 3,
-    name: "GOT citations",
-    label: "",
-    hrefDemo: "https://emily-ly-san.github.io/GotCitationsGenerator/",
-    hrefCode: "https://github.com/EmiLy-Ly-san/GotCitationsGenerator",
-    picture: "./src/assets/got.JPG",
-    description: "Games of thrones citations generator",
-    challenge: "API | JS methods | Responsive",
-    languages: ["html", "js", "css"],
-  },
+
   {
     id: 4,
     name: "Themed pomodoro",
@@ -49,7 +56,7 @@ const datasProjects = [
     description:
       "Pomodoro with switch themes between Star Wars, Stranger Things and Animal Crossing",
     challenge: "CSS Animation | Switch theme | Responsive | State",
-    languages: ["html", "js", "css"],
+    languages: ["html", "js", "css", "all"],
   },
   {
     id: 5,
@@ -60,7 +67,7 @@ const datasProjects = [
     picture: "./src/assets/rainbow.JPG",
     description: "Rainbow in mouvement",
     challenge: "Animation CSS | Drawing in CSS",
-    languages: ["html", "css"],
+    languages: ["html", "css", "all"],
   },
   {
     id: 6,
@@ -72,7 +79,7 @@ const datasProjects = [
     description:
       "Play with Hanabie, a Kawaii metal band, using your keyboard !",
     challenge: "User Keydown | Audio in JS | Button CSS Effect",
-    languages: ["html", "css", "js"],
+    languages: ["html", "css", "js", "all"],
   },
   {
     id: 7,
@@ -84,7 +91,7 @@ const datasProjects = [
     description:
       "Educational typing games for children around the theme of children's manga",
     challenge: "Modal | User Choice | object CLASS | Unicorns!",
-    languages: ["html", "scss", "js"],
+    languages: ["html", "scss", "js", "all"],
   },
   {
     id: 8,
@@ -95,7 +102,7 @@ const datasProjects = [
     picture: "./src/assets/updatevariablesincss.JPG",
     description: "Variables CSS mofidied by user choice",
     challenge: "Dataset | Interactiv pick-color, blur and spacing",
-    languages: ["html", "css", "js"],
+    languages: ["html", "css", "js", "all"],
   },
   {
     id: 9,
@@ -107,7 +114,29 @@ const datasProjects = [
     description:
       "Extendable panels to present differents colors of Fender Precision-Bass",
     challenge: "Toggle class | CSS transition",
-    languages: ["html", "css", "js"],
+    languages: ["html", "css", "js", "all"],
+  },
+  {
+    id: 10,
+    name: "Anime Art Clock",
+    label: "",
+    hrefDemo: "https://codepen.io/EmiLy-Ly-san/pen/wvbPqPv",
+    hrefCode: "",
+    picture: "./src/assets/animeArtClock.JPG",
+    description: "Clock application",
+    challenge: "Animation with JS | Glass effect in CSS",
+    languages: ["html", "js", "css", "all"],
+  },
+  {
+    id: 11,
+    name: "GOT citations",
+    label: "",
+    hrefDemo: "https://emily-ly-san.github.io/GotCitationsGenerator/",
+    hrefCode: "https://github.com/EmiLy-Ly-san/GotCitationsGenerator",
+    picture: "./src/assets/got.JPG",
+    description: "Games of thrones citations generator",
+    challenge: "API | JS methods | Responsive",
+    languages: ["html", "js", "css", "all"],
   },
 ];
 
@@ -139,10 +168,33 @@ const datasSentences = [
 ];
 
 function App() {
+  const [projects, setProjects] = useState(datasProjects);
+  const [currentGrid, setGrid] = useState("sortedProjects");
+  useEffect(() => setGrid("pinnedProject"), [])
+  console.log(currentGrid)
+
+  const sortProjects = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    const newProjects = datasProjects.filter((project) => {
+      return project.languages.includes(
+        `${event.currentTarget.dataset.language}`
+      );
+    });
+    console.log(currentGrid);
+    setProjects(newProjects);
+  };
+
   return (
     <>
       <Header />
-      <Main datasProjects={datasProjects} datasSentences={datasSentences} />
+        <Main
+          currentGrid={currentGrid}
+          setGrid={setGrid}
+          sortProjects={sortProjects}
+          datasProjects={projects}
+          datasSentences={datasSentences}
+        />
       <Footer />
     </>
   );
