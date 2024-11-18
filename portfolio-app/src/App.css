@@ -177,22 +177,9 @@ main {
   box-shadow: 2px 4px 7px var(--shadow-primary-color);
   position: relative;
   overflow: hidden;
-}
-
-/* :not(.pinnedProjetcs) .project {
-  /*for all project who arenot in the grid pinnedProject*/
-  /* animation: appear 500ms ease-in;
-  opacity: 0;
-} */ 
-
-.project.visible {
+  animation: appear 500ms ease-in;
   opacity: 1;
 }
-
-/* .pinnedProjects .project {
-  opacity: 1;
-  animation: none;
-} */
 
 .sortedProjects {
   display: flex;
