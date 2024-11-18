@@ -179,20 +179,20 @@ main {
   overflow: hidden;
 }
 
-:not(.pinnedProjetcs) .project {
+/* :not(.pinnedProjetcs) .project {
   /*for all project who arenot in the grid pinnedProject*/
-  animation: appear 500ms ease-in;
+  /* animation: appear 500ms ease-in;
   opacity: 0;
-}
+} */ 
 
 .project.visible {
   opacity: 1;
 }
 
-.pinnedProjects .project {
+/* .pinnedProjects .project {
   opacity: 1;
   animation: none;
-}
+} */
 
 .sortedProjects {
   display: flex;

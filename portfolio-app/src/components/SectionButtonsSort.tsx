@@ -4,12 +4,10 @@ interface SectionButtonsSortProps {
   sortProjects: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
-  setGrid: (className: string) => void;
 }
 
 export default function SectionButtonsSort({
   sortProjects,
-
 }: SectionButtonsSortProps) {
   const [indexActivButton, setIndexActivButton] = useState("0");
 
@@ -78,6 +76,18 @@ export default function SectionButtonsSort({
       >
         #BOOTSTRAP
       </button>
+      <button
+        className={indexActivButton === "5" ? "active" : ""}
+        type="button"
+        data-index="5"
+        data-language="REACT"
+        onClick={(event) => {
+          handleClick(event);
+        }}
+      >
+        #REACT/TYPESCRIPT
+      </button>
     </section>
   );
 }
+

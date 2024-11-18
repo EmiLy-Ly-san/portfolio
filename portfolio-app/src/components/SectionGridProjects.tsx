@@ -1,27 +1,18 @@
 
 import CardProject, { Project } from "./CardProject";
-import SentenceArticle, { Sentence } from "./SentenceArticle";
 
 
 interface SectionGridProjectsProps {
   datasProjects: Project[];
-  datasSentences: Sentence[];
-  setGrid: (className: string) => void;
-  currentGrid: string;
 }
 
 export default function SectionGridProjects({
   datasProjects,
-  datasSentences,
-  currentGrid,
 }: SectionGridProjectsProps) {
  
 
   return (
-    <section className={currentGrid} id="projectsGridContainer">
-      {datasSentences.map((sentence) => {
-        return <SentenceArticle {...sentence} key={sentence.id} />;
-      })}
+    <section id="projectsGridContainer" className="sortedProjects">
       {datasProjects.map((project) => {
         return <CardProject {...project} key={project.id} />;
         {
