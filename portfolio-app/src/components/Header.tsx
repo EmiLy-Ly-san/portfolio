@@ -13,13 +13,13 @@ export default function Header() {
           href="https://www.linkedin.com/in/emilie-de-duyver-83304229b/"
           target="blank"
         >
-          <img className="icon icon20" src="./src/assets/Linkedin.png" alt="" />
+          <img className="icon icon20" src="./public/Linkedin.png" alt="" />
         </a>
         <a href="https://github.com/EmiLy-Ly-san" target="blank">
-          <img className="icon icon20" src="./src/assets/Github.png" alt="" />
+          <img className="icon icon20" src="./public/Github.png" alt="" />
         </a>
         <a href="https://codepen.io/EmiLy-Ly-san" target="blank">
-          <img className="icon icon20" src="./src/assets/Codepen.png" alt="" />
+          <img className="icon icon20" src="./public/Codepen.png" alt="" />
         </a>
       </nav>
     </header>

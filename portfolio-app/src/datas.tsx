@@ -5,7 +5,7 @@ export const datasProjects = [
     label: "NEW",
     hrefDemo: "https://emily-ly-san.github.io/pokemon/",
     hrefCode: "https://github.com/EmiLy-Ly-san/pokemon",
-    picture: "./src/assets/pokedex2.JPG",
+    picture: "./public/pokedex2.JPG",
     description:
       "Find your favorite pokemon in the first generation and check his description.",
     challenge:
@@ -18,7 +18,7 @@ export const datasProjects = [
     label: "NEW",
     hrefDemo: "https://mellerincharly.github.io/projet-quiz-nantes/",
     hrefCode: "https://github.com/MellerinCharly/projet-quiz-nantes",
-    picture: "./src/assets/nantesQuest.JPG",
+    picture: "./public/nantesQuest.JPG",
     description:
       "Web site who generates differents quizz about Nantes city in France, build in team",
     challenge:
@@ -31,7 +31,7 @@ export const datasProjects = [
     label: "In Progress",
     hrefDemo: "https://emily-ly-san.github.io/AnimeArtMeteo/",
     hrefCode: "https://github.com/EmiLy-Ly-san/AnimeArtMeteo",
-    picture: "./src/assets/animeArtMeteo.JPG",
+    picture: "./public/animeArtMeteo.JPG",
     description:
       "Web meteo application who generates illustrations Work in progress",
     challenge:
@@ -45,7 +45,7 @@ export const datasProjects = [
     label: "",
     hrefDemo: "https://emily-ly-san.github.io/ThemedPomodoro/",
     hrefCode: "https://github.com/EmiLy-Ly-san/ThemedPomodoro",
-    picture: "./src/assets/pomodoro.JPG",
+    picture: "./public/pomodoro.JPG",
     description:
       "Pomodoro with switch themes between Star Wars, Stranger Things and Animal Crossing",
     challenge: "CSS Animation | Switch theme | Responsive | State",
@@ -57,7 +57,7 @@ export const datasProjects = [
     label: "",
     hrefDemo: "https://codepen.io/EmiLy-Ly-san/pen/gOyJKvm",
     hrefCode: "",
-    picture: "./src/assets/rainbow.JPG",
+    picture: "./public/rainbow.JPG",
     description: "Rainbow in mouvement",
     challenge: "Animation CSS | Drawing in CSS",
     languages: ["html", "css", "all"],
@@ -68,7 +68,7 @@ export const datasProjects = [
     label: "",
     hrefDemo: "https://emily-ly-san.github.io/js30-day1-Hanabie-Drum/",
     hrefCode: "https://github.com/EmiLy-Ly-san/js30-day1-Hanabie-Drum",
-    picture: "./src/assets/hanabie.JPG",
+    picture: "./public/hanabie.JPG",
     description:
       "Play with Hanabie, a Kawaii metal band, using your keyboard !",
     challenge: "User Keydown | Audio in JS | Button CSS Effect",
@@ -80,7 +80,7 @@ export const datasProjects = [
     label: "",
     hrefDemo: "https://emily-ly-san.github.io/MangaZerType/",
     hrefCode: "https://github.com/EmiLy-Ly-san/MangaZerType",
-    picture: "./src/assets/mangazertype.JPG",
+    picture: "./public/mangazertype.JPG",
     description:
       "Educational typing games for children around the theme of children's manga",
     challenge: "Modal | User Choice | object CLASS | Unicorns!",
@@ -103,7 +103,7 @@ export const datasProjects = [
     label: null,
     hrefDemo: "https://codepen.io/EmiLy-Ly-san/pen/YzbbqwE?editors=0110",
     hrefCode: null,
-    picture: "./src/assets/wichbass.JPG",
+    picture: "./public/wichbass.JPG",
     description:
       "Extendable panels to present differents colors of Fender Precision-Bass",
     challenge: "Toggle class | CSS transition",
@@ -115,7 +115,7 @@ export const datasProjects = [
     label: "",
     hrefDemo: "https://codepen.io/EmiLy-Ly-san/pen/wvbPqPv",
     hrefCode: "",
-    picture: "./src/assets/animeArtClock.JPG",
+    picture: "./public/animeArtClock.JPG",
     description: "Clock application",
     challenge: "Animation with JS | Glass effect in CSS",
     languages: ["html", "js", "css", "all"],
@@ -126,7 +126,7 @@ export const datasProjects = [
     label: "",
     hrefDemo: "https://emily-ly-san.github.io/GotCitationsGenerator/",
     hrefCode: "https://github.com/EmiLy-Ly-san/GotCitationsGenerator",
-    picture: "./src/assets/got.JPG",
+    picture: "./public/got.JPG",
     description: "Games of thrones citations generator",
     challenge: "API | JS methods | Responsive",
     languages: ["html", "js", "css", "all"],
