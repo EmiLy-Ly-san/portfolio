@@ -34,7 +34,7 @@ export default function CardProject({
             <a href={hrefCode} title="view code" target="_blank">
               <img
                 className="icon icon20"
-                src="./assets/code-icon.svg"
+                src="./portfolio/assets/code-icon.svg"
                 alt=""
                 aria-hidden
               />
@@ -43,7 +43,7 @@ export default function CardProject({
           <a href={hrefDemo} title="view demo project" target="_blank">
             <img
               className="icon icon20"
-              src="./assets/open-in-new-window-icon.svg"
+              src="./portfolio/assets/open-in-new-window-icon.svg"
               alt=""
               aria-hidden
             />
