@@ -1,14 +1,11 @@
 import { useState } from "react";
+import { useOutletContext } from "react-router";
 
-interface SectionButtonsSortProps {
-  sortProjects: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => void;
-}
 
-export default function SectionButtonsSort({
-  sortProjects,
-}: SectionButtonsSortProps) {
+
+export default function SectionButtonsSorts () {
+
+  const {sortProjects }: {sortProjects: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void} = useOutletContext();
   const [indexActivButton, setIndexActivButton] = useState("0");
 
   const handleClick = (
