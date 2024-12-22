@@ -3,6 +3,7 @@ import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import { StrictMode } from "react";
 import HomePage from "./pages/HomePage.tsx";
+import About from "./pages/About.tsx";
 
 
 
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <HomePage />
+      },
+      {
+        path: "about",
+        element: <About />
       }
     ] 
   }

@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 export default function Header() {
   return (
     <header>
@@ -9,6 +11,7 @@ export default function Header() {
         </div>
       </section>
       <nav>
+        <NavLink to="/portfolio/about" className="aboutLink">About</NavLink>
         <a
           href="https://www.linkedin.com/in/emilie-de-duyver-83304229b/"
           target="blank"
